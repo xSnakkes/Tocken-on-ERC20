@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Erc.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Erc.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>41/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+&nbsp;
+import "./IERC20.sol";
+&nbsp;
+contract ERC20 is IERC20{
+    uint totalTokens;
+    address owner;
+    mapping(address =&gt; uint) balances;
+    mapping(address =&gt; mapping(address =&gt; uint)) allowances;
+    string _name;
+    string _symbol;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function name() external view returns(string memory){</span>
+<span class="cstat-no" title="statement not covered" >        return _name;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function symbol() external view returns(string memory){</span>
+<span class="cstat-no" title="statement not covered" >        return _symbol;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function decimals() external pure returns(uint){</span>
+<span class="cstat-no" title="statement not covered" >        return 18;</span> // 1 token = 1 wei = 0.000000000000000001 ether
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function totalSupply() external view returns(uint){</span>
+<span class="cstat-no" title="statement not covered" >        return totalTokens;</span>
+    }
+&nbsp;
+&nbsp;
+    modifier enoughTockens(address _from, uint _amount){
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(balanceOf(_from) &gt;= _amount, "Not enough tokens!");
+        _;
+    }
+    modifier onlyOwner(){
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == owner, "Not an owner!");
+        _;
+    }
+&nbsp;
+    constructor(string memory name_, string memory symbol_, uint initialSupply, address shop){
+        _name = name_;
+        _symbol = symbol_;
+        owner = msg.sender;
+        mint(initialSupply, shop);
+    }
+&nbsp;
+    function balanceOf(address account) public view returns(uint){
+        return balances[account];
+    }
+&nbsp;
+    function transfer(address to, uint amount) external <span class="missing-if-branch" title="else path not taken" >E</span>enoughTockens(msg.sender, amount){
+        _beforeTokenTransfer(msg.sender, to, amount);
+        balances[msg.sender] -= amount;
+        balances[to] += amount;
+        emit Transfer(msg.sender, to, amount);    
+    }
+&nbsp;
+    function mint(uint amount, address shop) public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner{
+        _beforeTokenTransfer(address(0), shop, amount);
+        balances[shop] += amount;
+        totalTokens += amount;
+        emit Transfer(address(0), shop, amount);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function burn(address _from, uint amount) public onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        _beforeTokenTransfer(_from, address(0), amount)</span>;
+        balances[_from] -= amount;
+        totalTokens -= amount;
+    }
+&nbsp;
+    function allowance(address _owner, address spender) public view returns(uint){
+        return allowances[_owner][spender];
+    }
+&nbsp;
+    function approw(address spender, uint amount) public{
+        _approw(msg.sender, spender, amount);
+    }
+&nbsp;
+    function _approw(address sender, address spender, uint amount) internal virtual{
+        allowances[sender][spender] = amount;
+        emit Approw(sender, spender, amount);
+    }
+&nbsp;
+    function transferFrom(address sender, address recipient, uint amount) external <span class="missing-if-branch" title="else path not taken" >E</span>enoughTockens(sender, amount){
+        _beforeTokenTransfer(sender, recipient, amount);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(allowances[sender][recipient] &gt;= amount, "Check allowance!");
+        allowances[sender][msg.sender] -= amount;
+        balances[sender] -= amount;
+        balances[recipient] += amount;
+        emit Transfer(sender, recipient, amount);
+    }
+&nbsp;
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint amount
+    ) internal virtual {}
+}
+&nbsp;
+contract XSNAKESToken is ERC20{
+    constructor(address shop) ERC20("XSNAKESToken", "XSN", 20, shop){
+&nbsp;
+    }
+} 
+&nbsp;
+contract XSNShop {
+    IERC20 public token;
+    address payable public owner;
+    event Bought(uint _amount, address indexed _buyer);
+    event Sold(uint _amount, address indexed _seller);
+&nbsp;
+    constructor() {
+        token = new XSNAKESToken(address(this));
+        owner = payable(msg.sender);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    modifier onlyOwner(){</span>
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == owner, "Not an owner!")</span>;
+        _;
+    }
+&nbsp;
+    function sell(uint _amountToSell) external {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(
+            _amountToSell &gt; 0 &amp;&amp;
+            token.balanceOf(msg.sender) &gt;= _amountToSell,
+            "Incorrect amount!"
+        );
+&nbsp;
+        uint allowance = token.allowance(msg.sender, address(this));
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(allowance &gt;= _amountToSell, "check allowance!");
+&nbsp;
+        token.transferFrom(msg.sender, address(this), _amountToSell);
+&nbsp;
+        payable(msg.sender).transfer(_amountToSell);
+        
+        emit Sold(_amountToSell, msg.sender);
+    }
+&nbsp;
+    receive() external payable {
+        uint tokensToBuy = msg.value; // 1 wei = 1 token
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(tokensToBuy &gt; 0, "Not enough funds!");
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(tokenBalance() &gt; tokensToBuy, "Not enough tokens!");
+&nbsp;
+        token.transfer(msg.sender, tokensToBuy);
+        emit Bought(tokensToBuy, msg.sender);
+    }
+&nbsp;
+    function tokenBalance() public view returns(uint){
+        return token.balanceOf(address(this));
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed May 03 2023 11:35:00 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
